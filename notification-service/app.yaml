@@ -1,0 +1,20 @@
+runtime: nodejs
+env: flex
+service: ipg-dev-notif
+env_variables:
+    APP_PORT: "8080"
+    TZ: "UTC"
+    NODE_ENV: "dev"
+    AZURE_CLIENT_ID: "8e702bce-44fe-4897-b356-b4354098b9bc"
+    AZURE_TENANT_ID: "d026e4c1-5892-497a-b9da-ee493c9f0364"
+    AZURE_AUTH_URL: "https://login.microsoftonline.com"
+    AZURE_CLIENT_SECRET: "4cbY6K21xNEPDt1DHz..pC0-.d1Fv2n5Az"
+    SENDGRID_API_KEY: "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"
+    EMAIL_SENDER: "mbw@zazmic.com"
+    GOOGLE_APPLICATION_CREDENTIALS: ./firebase.config.json
+manual_scaling:
+    instances: 1
+resources:
+    cpu: 1
+    memory_gb: 1
+    disk_size_gb: 20

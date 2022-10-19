@@ -1,0 +1,135 @@
+stages:
+    - build
+    - deploy
+
+build_lint_test:
+    image: node:latest
+    tags:
+        - ipg-dev-bknd-appengine
+    stage: build
+    script:
+        - cd app
+        - npm config set user 0
+        - npm ci
+        - npm run lint
+        - npm run build
+        - npm run test
+    only:
+        - merge_requests
+
+create_docker_ipg_dev_bknd:
+    image: docker:stable
+    tags:
+        - ipg-dev-bknd-appengine
+    stage: build
+    script:
+        - cd app
+        - docker build . -t us.gcr.io/ipg-internal/appengine/ipg-dev-bknd-appengine
+        - base64 -d sa.json | docker login -u _json_key --password-stdin https://us.gcr.io
+        - docker push us.gcr.io/ipg-internal/appengine/ipg-dev-bknd-appengine
+    when: manual
+    only:
+        - dev
+
+deploy_docker_ipg_dev_bknd:
+    image: google/cloud-sdk:alpine
+    tags:
+        - ipg-dev-bknd-appengine
+    stage: deploy
+    script:
+        - cd app
+        - echo $SERVICE_ACCOUNT > 123.json
+        - gcloud auth activate-service-account --key-file 123.json
+        - gcloud app deploy --image-url=us.gcr.io/ipg-internal/appengine/ipg-dev-bknd-appengine:latest --version=1 --project=ipg-internal
+    when: manual
+    only:
+        - dev
+
+Azure_bknd_stage:
+    image: docker:stable
+    tags:
+        - ipg-dev-bknd-appengine
+    stage: deploy
+    script:
+        - cd app
+        - docker build -t acrtogetherstage.azurecr.io/backend -f DockerfileAzure .
+        #- docker login azure --client-id xx --client-secret yy --tenant-id zz
+        - docker login acrtogetherstage.azurecr.io --username $SP_APP_ID --password $SP_PASSWD
+        - docker push acrtogetherstage.azurecr.io/backend
+        #- docker --context myacicontext run -p 80:80 nginx
+    when: manual
+    only:
+        - stage
+
+Azure_bknd_prod:
+    image: docker:stable
+    tags:
+        - ipg-dev-bknd-appengine
+    stage: deploy
+    script:
+        - cd app
+        - docker build -t acrtogetherprod.azurecr.io/backend -f DockerfileAzure .
+        #- docker login azure --client-id xx --client-secret yy --tenant-id zz
+        - docker login acrtogetherprod.azurecr.io --username $SP_APP_ID_prod --password $SP_PASSWD_prod
+        - docker push acrtogetherprod.azurecr.io/backend
+        #- docker --context myacicontext run -p 80:80 nginx
+    when: manual
+    only:
+        - master
+
+create_docker_ipg_dev_notif:
+    image: docker:stable
+    tags:
+        - ipg-dev-bknd-appengine
+    stage: build
+    script:
+        - cd notification-service
+        - docker build . -t us.gcr.io/ipg-internal/appengine/ipg-dev-notif-appengine
+        - base64 -d sa.json | docker login -u _json_key --password-stdin https://us.gcr.io
+        - docker push us.gcr.io/ipg-internal/appengine/ipg-dev-notif-appengine
+    when: manual
+    only:
+        - dev
+
+deploy_docker_ipg_dev_notif:
+    image: google/cloud-sdk:alpine
+    tags:
+        - ipg-dev-bknd-appengine
+    stage: deploy
+    script:
+        - cd notification-service
+        - echo $SERVICE_ACCOUNT > 123.json
+        - gcloud auth activate-service-account --key-file 123.json
+        #- gcloud app deploy --image-url=us.gcr.io/ipg-internal/appengine/ipg-dev-notif-appengine:latest --version=1 --project=ipg-internal
+        - gcloud app deploy --image-url=us.gcr.io/ipg-internal/appengine/ipg-dev-notif-appengine:latest --version=1 --project=ipg-internal
+    when: manual
+    only:
+        - dev
+
+Azure_notif_stage:
+    image: docker:stable
+    tags:
+        - ipg-dev-bknd-appengine
+    stage: deploy
+    script:
+        - cd notification-service
+        - docker build -t acrtogetherstage.azurecr.io/notification -f DockerfileAzure .
+        - docker login acrtogetherstage.azurecr.io --username $SP_APP_ID --password $SP_PASSWD
+        - docker push acrtogetherstage.azurecr.io/notification
+    when: manual
+    only:
+        - stage
+
+Azure_notif_prod:
+    image: docker:stable
+    tags:
+        - ipg-dev-bknd-appengine
+    stage: deploy
+    script:
+        - cd notification-service
+        - docker build -t acrtogetherprod.azurecr.io/notification -f DockerfileAzure .
+        - docker login acrtogetherprod.azurecr.io --username $SP_APP_ID_prod --password $SP_PASSWD_prod
+        - docker push acrtogetherprod.azurecr.io/notification
+    when: manual
+    only:
+        - master

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2dd8b3f5-70e4-4126-9405-295de96dccc7" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="dev-IPG-305" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="1vf9qtRGm8v7M0X54S59pkXZiBC" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/vovay/WebstormProjects/jordan-dating-application&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2022.1\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ПК\IdeaProjects\ipg\backend\app\src\api\dto\location" />
+      <recent name="C:\Users\ПК\IdeaProjects\ipg\backend\app" />
+      <recent name="C:\Users\ПК\IdeaProjects\ipg\backend\notification-service" />
+      <recent name="C:\Users\ПК\IdeaProjects\ipg\backend\app\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.build">
+    <configuration name="BookingService.should create daily booking" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/app/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/app" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/app/src/booking-service/__test__/booking.service.spec.ts" />
+      <test-names>
+        <test-name value="BookingService" />
+        <test-name value="should create daily booking" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="BookingService.should create weekly booking" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/app/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/app" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/app/src/booking-service/__test__/booking.service.spec.ts" />
+      <test-names>
+        <test-name value="BookingService" />
+        <test-name value="should create weekly booking" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/app/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="precommit" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/app/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="precommit" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/app/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="test" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.build" />
+        <item itemvalue="npm.precommit" />
+        <item itemvalue="Jest.BookingService.should create weekly booking" />
+        <item itemvalue="Jest.BookingService.should create daily booking" />
+        <item itemvalue="npm.test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2dd8b3f5-70e4-4126-9405-295de96dccc7" name="Default Changelist" comment="" />
+      <created>1626942469858</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1626942469858</updated>
+      <workItem from="1626942473276" duration="59683000" />
+      <workItem from="1627383331111" duration="2671000" />
+      <workItem from="1627386967805" duration="1807000" />
+      <workItem from="1627388812239" duration="4234000" />
+      <workItem from="1627545430785" duration="402000" />
+      <workItem from="1646580587275" duration="21000" />
+      <workItem from="1646661322237" duration="1756000" />
+      <workItem from="1647014060576" duration="86000" />
+      <workItem from="1652194340427" duration="7645000" />
+      <workItem from="1655200045675" duration="86000" />
+      <workItem from="1655204089643" duration="2945000" />
+      <workItem from="1655459375880" duration="15000" />
+      <workItem from="1655813556518" duration="2734000" />
+      <workItem from="1657008505176" duration="3674000" />
+      <workItem from="1658318300031" duration="2359000" />
+      <workItem from="1659614667096" duration="1228000" />
+      <workItem from="1661163307226" duration="1681000" />
+      <workItem from="1663932937654" duration="616000" />
+      <workItem from="1666083234675" duration="4110000" />
+      <workItem from="1666167305195" duration="823000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/app/src/booking-service/booking.mapper.ts</url>
+          <line>115</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/app/src/booking-service/__test__/booking.service.spec.ts</url>
+          <line>484</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

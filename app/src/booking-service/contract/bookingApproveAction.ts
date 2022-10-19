@@ -1,0 +1,4 @@
+export enum BOOKING_APPROVE_ACTION {
+    APPROVE = "APPROVE",
+    DECLINE = "DECLINE"
+}

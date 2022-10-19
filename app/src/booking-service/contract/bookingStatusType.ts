@@ -1,0 +1,6 @@
+export enum BOOKING_STATUS_TYPE {
+    CANCELED = "CANCELED",
+    PASSED = "PASSED",
+    PENDING = "PENDING",
+    BOOKED = "BOOKED",
+}

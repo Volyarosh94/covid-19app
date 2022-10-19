@@ -1,0 +1,1 @@
+export const RESOURCE_SERVICE = Symbol("RESOURCE_SERVICE");

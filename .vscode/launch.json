@@ -1,0 +1,91 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "app",
+            "skipFiles": ["<node_internals>/**"],
+            "env": {
+                "APP_PORT": "3000",
+                "TZ": "UTC",
+                "NODE_ENV": "dev",
+                "DB_HOST": "localhost",
+                "DB_PORT": "5432",
+                "DB_USERNAME": "postgres",
+                "DB_PASSWORD": "postgres",
+                "DB_NAME": "postgres",
+                "AZURE_CLIENT_ID": "8e702bce-44fe-4897-b356-b4354098b9bc",
+                "AZURE_TENANT_ID": "d026e4c1-5892-497a-b9da-ee493c9f0364",
+                "AZURE_AUTH_URL": "https://login.microsoftonline.com",
+                "AZURE_CLIENT_SECRET": "4cbY6K21xNEPDt1DHz..pC0-.d1Fv2n5Az",
+                "MICROSOFT_GRAPH_URL": "https://graph.microsoft.com/v1.0",
+                "MICROSOFT_GRAPH_SCOPE": "https://graph.microsoft.com/.default",
+                "NOTIFICATION_SERVICE_URL": "http://localhost:3001",
+                "JWT_SECRET": "1234567890",
+                "WEBSITES_HOST": "https://ipg-frontend.zazmicdemo.com"
+            },
+            "sourceMaps": true,
+            "stopOnEntry": false,
+            "outputCapture": "std",
+            "console": "internalConsole",
+            "cwd": "${workspaceFolder}/app/src",
+            "runtimeArgs": ["--nolazy"],
+            "program": "${workspaceRoot}/app/src/main.ts",
+            "preLaunchTask": "npm: build - app",
+            "outFiles": ["${workspaceFolder}/app/dist/**/*.js"]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Jest File",
+            "program": "${workspaceFolder}/app/node_modules/jest/bin/jest",
+            "env": {
+                "TZ": "UTC"
+            },
+            "args": [
+                "--runInBand",
+                "${fileBasenameNoExtension}",
+                "--config=${workspaceFolder}/app/package.json",
+                "--coverage=false"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "disableOptimisticBPs": true,
+            "windows": {
+                "program": "${workspaceFolder}/node_modules/jest/bin/jest"
+            },
+            "resolveSourceMapLocations": ["${workspaceFolder}/**", "!**/node_modules/**"]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "notification-service",
+            "skipFiles": ["<node_internals>/**"],
+            "env": {
+                "APP_PORT": "3001",
+                "TZ": "UTC",
+                "NODE_ENV": "dev",
+                "AZURE_CLIENT_ID": "8e702bce-44fe-4897-b356-b4354098b9bc",
+                "AZURE_TENANT_ID": "d026e4c1-5892-497a-b9da-ee493c9f0364",
+                "AZURE_AUTH_URL": "https://login.microsoftonline.com",
+                "AZURE_CLIENT_SECRET": "4cbY6K21xNEPDt1DHz..pC0-.d1Fv2n5Az",
+                "SENDGRID_API_KEY": "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",
+                "EMAIL_SENDER": "mbw@zazmic.com",
+                "GOOGLE_APPLICATION_CREDENTIALS": "${workspaceFolder}/notification-service/firebase.config.json"
+            },
+            "sourceMaps": true,
+            "stopOnEntry": false,
+            "outputCapture": "std",
+            "console": "internalConsole",
+            "cwd": "${workspaceFolder}/notification-service/src",
+            "runtimeArgs": ["--nolazy"],
+            "program": "${workspaceRoot}/notification-service/src/main.ts",
+            "preLaunchTask": "npm: build - notification-service",
+            "outFiles": ["${workspaceFolder}/notification-service/dist/**/*.js"]
+        }
+    ]
+}
